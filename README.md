@@ -14,7 +14,7 @@ Create an HPA YAML file to define autoscaling behavior based on CPU or memory us
 Apply the HPA YAML using the command (kubectl apply -f hpa.yaml)
 Check the status of HPA:(kubectl get hpa)
 
-5. Version Control and Sharing:
+3. Version Control and Sharing:
 * Uploaded the complete codebase, including Kubernetes deployment manifests, to a public GitHub repository.
 * Update the repository's README.md file with documentation
   of the project setup.
