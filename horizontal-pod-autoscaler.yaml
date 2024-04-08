@@ -1,0 +1,64 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: horizontalpodautoscalers.autoscaling.k8s.io
+  annotations:
+    api-approved.kubernetes.io: "https://github.com/kubernetes/enhancements/pull/1111"
+spec:
+  group: autoscaling.k8s.io
+  names:
+    plural: horizontalpodautoscalers
+    singular: horizontalpodautoscaler
+    kind: HorizontalPodAutoscaler
+    listKind: HorizontalPodAutoscalerList
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              type: object
+              properties:
+                scaleTargetRef:
+                  type: object
+                  properties:
+                    apiVersion:
+                      type: string
+                    kind:
+                      type: string
+                    name:
+                      type: string
+                minReplicas:
+                  type: integer
+                maxReplicas:
+                  type: integer
+                metrics:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      resource:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          target:
+                            type: object
+                            properties:
+                              type:
+                                type: string
+                              averageUtilization:
+                                type: integer
+
