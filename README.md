@@ -17,4 +17,4 @@ Check the status of HPA:(kubectl get hpa)
 5. Version Control and Sharing:
 * Uploaded the complete codebase, including Kubernetes deployment manifests, to a public GitHub repository.
 * Update the repository's README.md file with documentation
-  of the project setup
+  of the project setup.
